@@ -1,0 +1,7 @@
+.card-grid {
+  display: grid;
+  /* Fit as many columns as possible, each at least 148px wide, sharing leftover space.
+     148 (not 160) so a 360px phone still gets two columns. */
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 12px;
+}

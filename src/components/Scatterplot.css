@@ -1,0 +1,43 @@
+.scatterplot {
+  display: block;
+  overflow: visible;
+  font-family: var(--font-body);
+}
+
+.axis__line {
+  stroke: var(--navy);
+}
+
+.axis__grid {
+  stroke: #e6e8ee;
+}
+
+.axis__tick {
+  fill: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.axis-title {
+  fill: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.chart-label {
+  fill: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
+  /* white halo behind the letters so they stay readable over grid lines and dots */
+  stroke: var(--cream);
+  stroke-width: 4px;
+  paint-order: stroke;
+  stroke-linejoin: round;
+}
+
+.chart-hint {
+  fill: var(--muted);
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.7; /* light grey: a hint, not data */
+}

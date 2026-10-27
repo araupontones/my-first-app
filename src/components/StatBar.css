@@ -1,0 +1,25 @@
+.stat-bar {
+  display: grid;
+  grid-template-columns: 32px 1fr 28px; /* label | bar | number */
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.stat-bar__label {
+  text-align: left;
+}
+
+.stat-bar__svg {
+  display: block;
+}
+
+.stat-bar__track {
+  fill: #e6e8ee;
+}
+
+.stat-bar__value {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: right;
+}

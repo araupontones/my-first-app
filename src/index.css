@@ -1,111 +1,107 @@
+/* ---------- Theme ---------- */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --poke-yellow: #ffcb05; /* hero bg, highlights, active button fill — never text on white */
+  --poke-blue: #2a75bb; /* buttons, links, heading accents */
+  --navy: #1d2c5e; /* all text, axes */
+  --poke-red: #cc0000; /* one call to action only */
+  --cream: #fffdf5; /* page background */
+  --card: #ffffff;
+  --muted: #5b6475; /* captions, corner hints, tick labels */
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --font-logo: "Luckiest Guy", cursive;
+  --font-heading: "Fredoka", sans-serif;
+  --font-body: "Nunito", sans-serif;
+  --font-pixel: "Press Start 2P", monospace;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--navy);
+  background: var(--cream);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* padding doesn't make boxes wider than we asked */
 }
 
 body {
   margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  background: var(--cream);
+  overflow-x: clip; /* safety net: no sideways scroll on phones (clip, unlike hidden, keeps the sticky sidebar working) */
 }
 
 h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+h2,
+h3 {
+  margin: 0 0 0.5em;
+  line-height: 1.15;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
 h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: var(--navy);
 }
+
+/* Little blue underline accent under each section title */
+h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 2px;
+  background: var(--poke-blue);
+}
+
 p {
-  margin: 0;
+  margin: 0 0 1em;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+a {
+  color: var(--poke-blue);
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+img {
+  max-width: 100%;
+}
+
+/* Numbers line up nicely when every digit has the same width */
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Short retro labels (HP, ATK, type badges, stat numbers) */
+.pixel {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+/* Keyboard users must always see where they are */
+:focus-visible {
+  outline: 3px solid var(--poke-blue);
+  outline-offset: 2px;
+}
+
+/* ---------- Layout ---------- */
+/* Phones: sidebar strip on top, content below. Wide screens: sidebar column + content. */
+@media (min-width: 900px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr); /* minmax(0, …) stops wide content pushing the page sideways */
+    gap: 16px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 16px; /* 16px side gutter for phones */
 }

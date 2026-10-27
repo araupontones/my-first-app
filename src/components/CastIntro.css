@@ -1,0 +1,8 @@
+.cast-intro {
+  margin-bottom: 24px;
+}
+
+.cast-intro p {
+  max-width: 60ch; /* short lines are easier to read */
+  font-size: 1.05rem;
+}
