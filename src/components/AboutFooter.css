@@ -1,0 +1,79 @@
+/* A quiet footer: light blue, small text */
+.about {
+  background: #d6e8f7;
+  color: #374151;
+  border-top: 4px solid var(--poke-blue);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.about__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 16px 24px;
+}
+
+/* Phones: one column. Desktop: three. */
+.about__columns {
+  display: grid;
+  gap: 8px 40px;
+}
+
+@media (min-width: 760px) {
+  .about__columns {
+    grid-template-columns: 1.4fr 1.2fr 0.8fr; /* the text-heavy column gets more room */
+  }
+}
+
+/* Override the page-wide h2 style (logo font + blue underline) for this quiet heading */
+.about__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.about__title::after {
+  display: none;
+}
+
+.about__subtitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--navy);
+  margin: 16px 0 6px;
+}
+
+.about__column > .about__subtitle:first-child {
+  margin-top: 0; /* columns without the big title start flush at the top */
+}
+
+.about p {
+  margin: 0 0 0.75em;
+}
+
+.about ul {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.about li {
+  margin-bottom: 4px;
+}
+
+.about a {
+  color: var(--navy);
+  text-decoration: underline;
+}
+
+/* "p." makes this beat the ".about p" margin above */
+.about p.about__smallprint {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(55, 65, 81, 0.2);
+  font-size: 0.78rem;
+  color: #4b5563;
+}

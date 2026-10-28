@@ -1,13 +1,20 @@
 .stat-bar {
   display: grid;
-  grid-template-columns: 32px 1fr 28px; /* label | bar | number */
+  grid-template-columns: 46px 1fr 30px; /* icon + label | bar | number */
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   margin-top: 6px;
 }
 
 .stat-bar__label {
-  text-align: left;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Icon takes the stat colour; the label text itself stays navy for readability */
+.stat-bar__label-text {
+  color: var(--navy);
 }
 
 .stat-bar__svg {
@@ -19,7 +26,13 @@
 }
 
 .stat-bar__value {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.9rem;
   text-align: right;
+}
+
+/* The stat the cards are sorted by */
+.stat-bar--bold .stat-bar__value {
+  font-weight: 800;
+  font-size: 1.05rem;
 }

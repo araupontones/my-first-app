@@ -1,0 +1,53 @@
+.sort-buttons {
+  display: flex;
+  flex-wrap: wrap; /* new line on phones instead of sideways scroll */
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.sort-buttons__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px; /* big enough for a thumb */
+  padding: 6px 14px;
+  border: 1px solid var(--poke-blue); /* same square 1px look as the type buttons */
+  background: var(--card);
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.sort-buttons__button:hover {
+  background: #eef4fb;
+}
+
+.sort-buttons__button[aria-pressed="true"] {
+  background: var(--poke-yellow);
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+/* Each stat button carries the colour of its bars.
+   Two classes (more specific than the selected rule above) so the colour also stays when selected. */
+.sort-buttons__button.sort-buttons__button--hp {
+  border-left: 3px solid var(--stat-hp);
+}
+
+.sort-buttons__button.sort-buttons__button--attack {
+  border-left: 3px solid var(--stat-attack);
+}
+
+.sort-buttons__icon {
+  display: inline-flex;
+}
+
+.sort-buttons__icon--hp {
+  color: var(--stat-hp);
+}
+
+.sort-buttons__icon--attack {
+  color: var(--stat-attack);
+}

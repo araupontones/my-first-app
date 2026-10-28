@@ -3,7 +3,7 @@ import { useDimensions } from "../utils/useDimensions";
 import Scatterplot from "./Scatterplot";
 
 // Measures the space available, then draws a Scatterplot that exactly fits it.
-function ResponsiveScatterplot({ data, selectedType }) {
+function ResponsiveScatterplot({ data, fighters }) {
   const chartRef = useRef(null); // a handle on the <div> below, so we can measure it
   const { width } = useDimensions(chartRef);
 
@@ -12,7 +12,7 @@ function ResponsiveScatterplot({ data, selectedType }) {
 
   return (
     <div ref={chartRef} style={{ width: "100%" }}>
-      {width > 0 && <Scatterplot data={data} width={width} height={height} selectedType={selectedType} />}
+      {width > 0 && <Scatterplot data={data} width={width} height={height} fighters={fighters} />}
     </div>
   );
 }

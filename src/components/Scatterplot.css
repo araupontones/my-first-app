@@ -35,6 +35,13 @@
   stroke-linejoin: round;
 }
 
+/* Small white circle behind each type emoji, so it stands out from sprites and grid lines */
+.chart-emoji__badge {
+  fill: var(--card);
+  stroke: #d3deec;
+  stroke-width: 1px;
+}
+
 .chart-hint {
   fill: var(--muted);
   font-size: 14px;

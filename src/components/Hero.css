@@ -23,14 +23,21 @@
 }
 
 .hero__subtitle {
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   font-weight: 600;
   max-width: 32ch;
   margin: 0 auto 24px;
+  font-family: var(--font-logo);
+  color: var(--navy);
+  -webkit-text-stroke: 0.005em white;
 }
 
 .hero__pikachu {
   width: 288px; /* 3 × the 96 px original */
   height: auto;
   max-width: 100%;
+}
+
+h2 {
+  font-family: var(--font-logo);
 }

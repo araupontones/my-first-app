@@ -1,0 +1,35 @@
+/* Text beats share the page-wide text width; the battle beat uses the full width */
+.beat {
+  width: 100%;
+  max-width: var(--text-width);
+}
+
+.beat--wide {
+  max-width: none;
+}
+
+.beat + .beat {
+  margin-top: 72px; /* generous breathing room between beats */
+}
+
+.beat p {
+  font-size: 1.1rem;
+}
+
+.beat__headline {
+  font-family: var(--font-logo);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.beat__headline--big {
+  font-size: clamp(1.9rem, 6vw, 2.6rem);
+}
+
+.beat p.beat__kicker {
+  /* "p." makes this more specific than ".beat p", so its bigger size wins */
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}

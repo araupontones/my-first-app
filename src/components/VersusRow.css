@@ -1,0 +1,36 @@
+.versus-row {
+  display: flex;
+  align-items: flex-end; /* both captions on the same baseline */
+  justify-content: center;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.versus-row__fighter {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+}
+
+.versus-row__sprite {
+  image-rendering: pixelated; /* crisp pixel art, even at 2× size */
+}
+
+.versus-row__times {
+  align-self: center;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 3rem;
+  color: var(--poke-red); /* the one red call-out on the page */
+}
+
+/* Phones: stack vertically */
+@media (max-width: 480px) {
+  .versus-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}

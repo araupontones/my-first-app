@@ -1,0 +1,79 @@
+.battle-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 16px;
+}
+
+/* slot 1 | VS | slot 2 */
+.battle-picker__slots {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-areas: "left vs right";
+  align-items: end;
+  gap: 12px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.battle-picker__slot:first-child {
+  grid-area: left;
+}
+
+.battle-picker__slot:nth-child(2) {
+  grid-area: right;
+}
+
+.battle-picker__vs {
+  grid-area: vs;
+  font-size: 12px;
+  padding-bottom: 16px; /* line up with the middle of the selects */
+}
+
+.battle-picker__slot {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.battle-picker__slot-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.battle-picker__select {
+  width: 100%;
+  min-height: 48px;
+  padding: 8px 10px;
+  border: 1px solid var(--muted);
+  background: var(--card);
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* The open list itself stays plain white, whatever colour the box is */
+.battle-picker__select option {
+  background: var(--card);
+  color: var(--navy);
+}
+
+.battle-picker__random {
+  min-height: 40px;
+  padding: 6px 14px;
+  border: 1px solid var(--poke-blue);
+  background: var(--card);
+  color: var(--navy);
+  font-family: var(--font-logo);
+  font-weight: 500;
+  font-size: 0.98rem;
+  cursor: pointer;
+}
+
+.battle-picker__random:hover {
+  background: #eef4fb;
+}

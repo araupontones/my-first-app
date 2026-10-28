@@ -1,6 +1,6 @@
-// Always-visible names next to the famous Pokémon.
+// Always-visible names next to the Pokémon on the chart.
 // labels: [{ name, x, y, anchor }] already positioned by the Scatterplot.
-function FamousLabels({ labels }) {
+function ChartLabels({ labels }) {
   return (
     <g>
       {labels.map((label) => (
@@ -18,4 +18,4 @@ function FamousLabels({ labels }) {
   );
 }
 
-export default FamousLabels;
+export default ChartLabels;

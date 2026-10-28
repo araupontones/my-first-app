@@ -1,0 +1,26 @@
+.battle-cards__group {
+  margin-top: 24px;
+}
+
+.battle-cards__heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0 0 12px;
+}
+
+.battle-cards__swatch {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent; /* navy for Electric */
+}
+
+.battle-cards__count {
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+}

@@ -1,0 +1,67 @@
+/* A light HUD panel, like the health bars at the top of a fighting game */
+.scoreboard {
+  background: #eef4fb;
+  color: var(--navy);
+  padding: 16px 12px;
+  border: 1px solid #d3deec;
+  margin-bottom: 24px;
+}
+
+.scoreboard__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.scoreboard__fighter--right {
+  text-align: right;
+}
+
+.scoreboard__row {
+  margin-top: 16px;
+}
+
+.scoreboard__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+/* Two halves touching in the centre */
+.scoreboard__bars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px; /* thin centre line */
+}
+
+.scoreboard__side {
+  display: grid;
+  align-items: center;
+  gap: 6px;
+}
+
+.scoreboard__side--left {
+  grid-template-columns: auto 1fr; /* number | bar */
+}
+
+.scoreboard__side--right {
+  grid-template-columns: 1fr auto; /* bar | number */
+}
+
+.scoreboard__bar {
+  display: block;
+}
+
+.scoreboard__track {
+  fill: #dce4ef;
+}
+
+.scoreboard__value {
+  font-size: 12px;
+  min-width: 3ch; /* 3 digits, so bars start at the same place in both rows */
+  text-align: center;
+}

@@ -1,0 +1,10 @@
+/* The width is set on the wrapper (base font size) so it matches the other sections exactly */
+.cast-intro {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: var(--text-width);
+}
+
+.cast-intro p {
+  font-size: 1.05rem;
+}

@@ -8,7 +8,7 @@ function Hero() {
       <div className="hero__inner">
         <h1 className="hero__title">Pika-what?</h1>
         <p className="hero__subtitle">
-          Everything you need to survive the next car ride, in under 3 minutes.
+          The survival guide for parents of Pokémon-obsessed kids.
         </p>
         <img
           className="hero__pikachu"
